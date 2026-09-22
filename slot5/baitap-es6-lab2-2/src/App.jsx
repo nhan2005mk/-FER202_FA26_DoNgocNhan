@@ -1,12 +1,34 @@
-import Container from 'react-bootstrap/Container';
-import RegisterForm from './components/RegisterForm';
+import {
+  CartTable,
+  Layout,
+  ProductList,
+  RegisterForm,
+  WelcomeCard,
+} from './components';
+import { products } from './data/products';
 
 function App() {
   return (
-    <Container className="py-5">
-      <h1 className="h2 text-center mb-4">Bài 8: Form đăng ký</h1>
-      <RegisterForm />
-    </Container>
+    <Layout title="Cửa hàng ES6">
+      <section id="home" className="mb-5">
+        <WelcomeCard />
+      </section>
+
+      <section id="products" className="mb-5">
+        <h2 className="h4 mb-3">Sản phẩm</h2>
+        <ProductList products={products} />
+      </section>
+
+      <section id="cart" className="mb-5">
+        <h2 className="h4 mb-3">Giỏ hàng</h2>
+        <CartTable products={products} />
+      </section>
+
+      <section id="register">
+        <h2 className="h4 mb-3">Đăng ký</h2>
+        <RegisterForm />
+      </section>
+    </Layout>
   );
 }
 

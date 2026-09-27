@@ -1,0 +1,74 @@
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.hero-carousel .carousel-item img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.hero-carousel .carousel-caption h3 {
+  font-size: 2.2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.menu-card {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.menu-card .card-img-top {
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.menu-card .badge-tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffea00;
+  color: #000;
+  font-weight: bold;
+  padding: 2px 18px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.menu-card .card-title {
+  font-size: 1.3rem;
+}
+
+.price-old {
+  text-decoration: line-through;
+  color: #6c757d;
+  margin-right: 4px;
+}
+
+.price-sale {
+  color: #fd7e14;
+}
+
+.booking-form .form-control,
+.booking-form .form-select {
+  border-radius: 2px;
+}
+
+.btn-send {
+  background-color: #ffc107;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  padding: 8px 28px;
+}
+
+.btn-send:hover {
+  background-color: #e0a800;
+  color: #fff;
+}

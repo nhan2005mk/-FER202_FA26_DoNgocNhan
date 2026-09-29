@@ -2,6 +2,7 @@ import { Container } from 'react-bootstrap'
 import FaqAccordion from './components/FaqAccordion'
 import ReviewForm from './components/ReviewForm'
 import BmiCalculator from './components/BmiCalculator'
+import StudentManager from './components/StudentManager'
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <ReviewForm />
       <hr className="my-5" />
       <BmiCalculator />
+      <hr className="my-5" />
+      <StudentManager />
     </Container>
   )
 }

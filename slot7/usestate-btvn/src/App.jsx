@@ -3,6 +3,7 @@ import FaqAccordion from './components/FaqAccordion'
 import ReviewForm from './components/ReviewForm'
 import BmiCalculator from './components/BmiCalculator'
 import StudentManager from './components/StudentManager'
+import QuizApp from './components/QuizApp'
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
       <BmiCalculator />
       <hr className="my-5" />
       <StudentManager />
+      <hr className="my-5" />
+      <QuizApp />
     </Container>
   )
 }

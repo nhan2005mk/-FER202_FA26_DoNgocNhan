@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+﻿import { useReducer } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -11,16 +11,16 @@ const HISTORY_LIMIT = 5;
 
 const clamp = (n) => Math.min(MAX, Math.max(MIN, n));
 
-export const ACTIONS = {
+const ACTIONS = {
   INCREMENT: 'counter/increment',
   DECREMENT: 'counter/decrement',
   SET_STEP: 'counter/setStep',
   RESET: 'counter/reset',
 };
 
-export const initialState = { count: 0, step: 1, history: [] };
+const initialState = { count: 0, step: 1, history: [] };
 
-export const counterReducer = (state, action) => {
+const counterReducer = (state, action) => {
   switch (action.type) {
     case ACTIONS.INCREMENT:
     case ACTIONS.DECREMENT: {

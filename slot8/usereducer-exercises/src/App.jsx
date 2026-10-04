@@ -1,9 +1,10 @@
 // import StepCounter from './usereducer/StepCounter';
-import OrderTracker from './usereducer/OrderTracker';
+// import OrderTracker from './usereducer/OrderTracker';
+import KanbanBoard from './usereducer/KanbanBoard';
 
 const App = () => (
   <div className="container my-4">
-    <OrderTracker />
+    <KanbanBoard />
   </div>
 );
 

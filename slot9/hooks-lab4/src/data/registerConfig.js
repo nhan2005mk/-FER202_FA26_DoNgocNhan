@@ -22,6 +22,12 @@ export const fields = [
     helpText: 'Dùng cả chữ và số',
   },
   {
+    id: 'confirmPassword',
+    label: 'Nhập lại mật khẩu',
+    type: 'password',
+    required: true,
+  },
+  {
     id: 'phone',
     label: 'Số điện thoại',
     type: 'tel',
@@ -47,3 +53,16 @@ export const majors = [
   'Artificial Intelligence',
   'Digital Marketing',
 ];
+
+export const initialValues = {
+  fullName: '',
+  email: '',
+  password: '',
+  confirmPassword: '',
+  phone: '',
+  birthday: '',
+  address: '',
+  gender: 'Nam',
+  major: '',
+  agree: false,
+};

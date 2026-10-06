@@ -1,24 +1,36 @@
+import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { APP_NAME, menuItems } from '../../data/menu';
+import { APP_NAME } from '../../data/menu';
+import { useTheme } from '../../context/ThemeContext';
+import { useAuth } from '../../context/AuthContext';
 
-const Header = () => (
-  <Navbar bg="dark" data-bs-theme="dark" expand="md">
-    <Container>
-      <Navbar.Brand href="#home">{APP_NAME}</Navbar.Brand>
-      <Navbar.Toggle aria-controls="main-navigation" />
-      <Navbar.Collapse id="main-navigation">
-        <Nav className="ms-auto">
-          {menuItems.map(({ label, href }) => (
-            <Nav.Link key={href} href={href}>
-              {label}
-            </Nav.Link>
-          ))}
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
-);
+const Header = () => {
+  const { theme, toggleTheme } = useTheme();
+  const { user, isLoggedIn, logout } = useAuth();
+
+  return (
+    <Navbar bg={theme === 'dark' ? 'dark' : 'primary'} data-bs-theme="dark" className="border-bottom">
+      <Container>
+        <Navbar.Brand href="#home">{APP_NAME}</Navbar.Brand>
+        <div className="d-flex align-items-center gap-2">
+          <Button size="sm" variant="outline-light" onClick={toggleTheme}>
+            {theme === 'light' ? '🌙 Tối' : '☀️ Sáng'}
+          </Button>
+          {isLoggedIn ? (
+            <>
+              <Navbar.Text className="text-white">{`Xin chào, ${user.name}`}</Navbar.Text>
+              <Button size="sm" variant="light" onClick={logout}>
+                Đăng xuất
+              </Button>
+            </>
+          ) : (
+            <Navbar.Text className="text-white-50">Chưa đăng nhập</Navbar.Text>
+          )}
+        </div>
+      </Container>
+    </Navbar>
+  );
+};
 
 export default Header;

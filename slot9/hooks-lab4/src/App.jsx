@@ -5,13 +5,14 @@ import MiniCart from './components/MiniCart';
 import ProfilePreview from './components/ProfilePreview';
 import ProductFilter from './components/ProductFilter';
 import RegisterForm from './components/RegisterForm';
+import ValidatedRegisterForm from './components/ValidatedRegisterForm';
 import { products } from './data/products';
 
 const App = () => (
   <div className="container my-4">
     <h2 className="mb-4">Lab4: React Hooks</h2>
 
-    <Tabs defaultActiveKey="bai4" className="mb-4" mountOnEnter unmountOnExit>
+    <Tabs defaultActiveKey="bai5" className="mb-4" mountOnEnter unmountOnExit>
       <Tab eventKey="bai1" title="Bài 1: useState">
         <h5>Phần 1. Bộ chọn số lượng</h5>
         <div className="d-flex flex-column gap-3 mb-4">
@@ -33,6 +34,10 @@ const App = () => (
 
       <Tab eventKey="bai4" title="Bài 4: Form đăng ký">
         <RegisterForm />
+      </Tab>
+
+      <Tab eventKey="bai5" title="Bài 5: Validation">
+        <ValidatedRegisterForm />
       </Tab>
     </Tabs>
   </div>

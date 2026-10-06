@@ -8,13 +8,14 @@ import RegisterForm from './components/RegisterForm';
 import ValidatedRegisterForm from './components/ValidatedRegisterForm';
 import TodoList from './components/TodoList';
 import CartDemoPage from './pages/CartDemoPage';
+import LoginForm from './components/LoginForm';
 import { products } from './data/products';
 
 const App = () => (
   <div className="container my-4">
     <h2 className="mb-4">Lab4: React Hooks</h2>
 
-    <Tabs defaultActiveKey="bai7" className="mb-4" mountOnEnter unmountOnExit>
+    <Tabs defaultActiveKey="bai8" className="mb-4" mountOnEnter unmountOnExit>
       <Tab eventKey="bai1" title="Bài 1: useState">
         <h5>Phần 1. Bộ chọn số lượng</h5>
         <div className="d-flex flex-column gap-3 mb-4">
@@ -48,6 +49,10 @@ const App = () => (
 
       <Tab eventKey="bai7" title="Bài 7: useReducer giỏ hàng">
         <CartDemoPage />
+      </Tab>
+
+      <Tab eventKey="bai8" title="Bài 8: Đăng nhập">
+        <LoginForm />
       </Tab>
     </Tabs>
   </div>

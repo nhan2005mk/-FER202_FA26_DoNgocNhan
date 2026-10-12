@@ -9,6 +9,9 @@ import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
 import ExercisesPage from './pages/ExercisesPage';
 
+
+
+
 const TITLES = {
   shop: 'Cửa hàng',
   cart: 'Giỏ hàng',

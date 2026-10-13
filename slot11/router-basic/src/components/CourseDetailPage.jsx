@@ -12,14 +12,16 @@ const CourseDetailPage = () => {
         return (
             <Container className="py-5" style={{ maxWidth: '650px' }}>
                 <Alert variant="danger" className="shadow-sm">
-                    <Alert.Heading className="fw-bold">Không tìm thấy môn học!</Alert.Heading>
+                    <Alert.Heading className="fw-bold">
+                        Không tìm thấy môn học có mã {code}
+                    </Alert.Heading>
                     <p className="mb-3">
-                        Mã môn học <strong className="text-decoration-underline">{code}</strong> không tồn tại trong hệ thống.
+                        Môn học với mã <strong className="text-decoration-underline">{code}</strong> không tồn tại trong hệ thống đào tạo.
                     </p>
                     <hr />
                     <div className="d-flex justify-content-end">
                         <Button as={Link} to="/courses" variant="outline-danger">
-                            ← Quay lại danh sách môn
+                            ← Quay lại danh sách
                         </Button>
                     </div>
                 </Alert>

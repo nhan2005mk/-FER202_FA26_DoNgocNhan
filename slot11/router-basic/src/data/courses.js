@@ -34,6 +34,7 @@ export const COURSES = [
         semester: 5,
         desc: 'Dự án phát triển phần mềm theo mô hình Agile/Scrum, xây dựng ứng dụng thực tế theo nhóm.',
     },
+
 ];
 
 export const findCourse = (code) =>

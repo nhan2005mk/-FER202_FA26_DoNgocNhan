@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import {
-  Carousel,
   Container,
   Row,
   Col,
@@ -9,31 +8,8 @@ import {
   ToastContainer,
 } from 'react-bootstrap'
 import MyProduct from '../components/MyProduct'
+import MyCarousel from '../components/MyCarousel'
 import { products } from '../data/products'
-
-
-const slides = [
-  {
-    src: '/images/slide1.jpg',
-    title: 'Hương Vị Nướng Đậm Đà',
-    description: 'Thưởng thức bít tết hảo hạng và món nướng chuẩn phong cách ẩm thực châu Âu.',
-  },
-  {
-    src: '/images/slide2.jpg',
-    title: 'BBQ Xiên Nướng Thơm Lừng',
-    description: 'Gà nướng than hoa vàng giòn kết hợp khoai tây và nước sốt bí truyền đặc biệt.',
-  },
-  {
-    src: '/images/slide3.jpg',
-    title: 'Món Ăn Xanh & Dinh Dưỡng',
-    description: 'Salad Địa Trung Hải tươi mát mang lại nguồn năng lượng thanh lành cho sức khỏe.',
-  },
-  {
-    src: '/images/slide4.jpg',
-    title: 'Bàn Tiệc Thịnh Soạn Đẳng Cấp',
-    description: 'Không gian ấm cúng, sang trọng cùng thực đơn phong phú cho bữa tiệc trọn vẹn.',
-  },
-]
 
 export default function Home() {
   const [toastItem, setToastItem] = useState(null)
@@ -44,32 +20,8 @@ export default function Home() {
 
   return (
     <>
-      {/* 1. Carousel Slider */}
-      <Carousel className="shadow-sm rounded overflow-hidden mb-4">
-        {slides.map((slide, index) => (
-          <Carousel.Item key={index}>
-            <img
-              className="d-block w-100"
-              src={slide.src}
-              alt={slide.title}
-              style={{ height: '420px', objectFit: 'cover' }}
-            />
-            <Carousel.Caption
-              style={{
-                backgroundColor: 'rgba(0, 0, 0, 0.55)',
-                borderRadius: '8px',
-                padding: '12px 20px',
-                backdropFilter: 'blur(4px)',
-                maxWidth: '650px',
-                margin: '0 auto',
-              }}
-            >
-              <h3 className="fw-bold text-white">{slide.title}</h3>
-              <p className="mb-0 text-light">{slide.description}</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+      {/* 1. Carousel Slider (B5: MyCarousel) */}
+      <MyCarousel />
 
       <Container className="my-4">
         {/* Tiêu đề trang theo bài Lab */}

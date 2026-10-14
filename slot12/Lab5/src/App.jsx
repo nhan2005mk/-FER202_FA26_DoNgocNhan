@@ -4,6 +4,7 @@ import About from './pages/About'
 import New from './pages/New'
 import Contact from './pages/Contact'
 import Navbar from './components/Navbar'
+import ProductList from './pages/ProductList';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/new" element={<New />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/products" element={<ProductList />} />
         </Routes>
       </div>
     </BrowserRouter>

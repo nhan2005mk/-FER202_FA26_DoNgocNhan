@@ -7,6 +7,8 @@ export default function Navbar() {
       <Link to="/about" style={{ textDecoration: 'none', color: '#666' }}>About</Link>
       <Link to="/new" style={{ textDecoration: 'none', color: '#666' }}>New</Link>
       <Link to="/contact" style={{ textDecoration: 'none', color: '#666' }}>Contact</Link>
+      <Link to="/products" style={{ textDecoration: 'none', color: '#666' }}>Products</Link>
+
     </nav>
   );
 }

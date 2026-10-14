@@ -1,30 +1,19 @@
-import { Badge, ListGroup } from 'react-bootstrap';
+import { Container, ListGroup } from 'react-bootstrap';
 
-const SKILLS = [
-  { name: 'HTML / CSS', level: 'Khá' },
-  { name: 'JavaScript (ES6+)', level: 'Khá' },
-  { name: 'ReactJS', level: 'Trung bình' },
-  { name: 'React-Bootstrap', level: 'Trung bình' },
-  { name: 'Git / GitHub', level: 'Cơ bản' },
-];
-
-const SkillsPage = () => (
-  <>
-    <h2 className="mb-3">Kỹ năng</h2>
-    <ListGroup>
-      {SKILLS.map((skill) => (
-        <ListGroup.Item
-          key={skill.name}
-          className="d-flex justify-content-between align-items-center"
-        >
-          {skill.name}
-          <Badge bg="primary" pill>
-            {skill.level}
-          </Badge>
-        </ListGroup.Item>
-      ))}
-    </ListGroup>
-  </>
-);
+const SkillsPage = () => {
+  return (
+    <Container className="py-4">
+      <h2>Kỹ năng chuyên môn</h2>
+      <p className="text-muted">Các công nghệ và công cụ tôi đang sử dụng:</p>
+      
+      <ListGroup className="mt-3 shadow-sm">
+        <ListGroup.Item>ReactJS & Vite (Xây dựng giao diện Single Page Application)</ListGroup.Item>
+        <ListGroup.Item>JavaScript (ES6+) & Front-End Web Development</ListGroup.Item>
+        <ListGroup.Item>React-Bootstrap & CSS Bootstrap</ListGroup.Item>
+        <ListGroup.Item>Git & GitHub (Quản lý mã nguồn)</ListGroup.Item>
+      </ListGroup>
+    </Container>
+  );
+};
 
 export default SkillsPage;

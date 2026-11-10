@@ -3,9 +3,10 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import Counter from './components/Counter';
 import TodoApp from './components/TodoApp';
 import UserApp from './components/UserApp';
+import ShopApp from './components/ShopApp';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('bai3');
+  const [activeTab, setActiveTab] = useState('bai4');
 
   return (
     <div className="min-vh-100 bg-light">
@@ -15,6 +16,7 @@ export default function App() {
           <Nav.Link eventKey="bai1">Bài 1: Counter</Nav.Link>
           <Nav.Link eventKey="bai2">Bài 2: Todo List</Nav.Link>
           <Nav.Link eventKey="bai3">Bài 3: Users (Thunk)</Nav.Link>
+          <Nav.Link eventKey="bai4">Bài 4: Shop (RTK)</Nav.Link>
         </Nav>
       </Navbar>
 
@@ -22,6 +24,7 @@ export default function App() {
         {activeTab === 'bai1' && <Counter />}
         {activeTab === 'bai2' && <TodoApp />}
         {activeTab === 'bai3' && <UserApp />}
+        {activeTab === 'bai4' && <ShopApp />}
       </Container>
     </div>
   );

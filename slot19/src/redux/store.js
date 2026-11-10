@@ -1,17 +1,43 @@
-import { legacy_createStore as createStore, applyMiddleware, compose } from 'redux';
-import { thunk } from 'redux-thunk';
-import rootReducer from './reducers';
+import { configureStore } from '@reduxjs/toolkit';
+import counterReducer from './counterReducer';
+import todosReducer from './reducers/todosReducer';
+import filterReducer from './reducers/filterReducer';
+import userReducer from './users/userReducer';
+import cartReducer from '../features/cart/cartSlice';
+import productsReducer from '../features/products/productsSlice';
 
-// Middleware tự viết: log mọi action (minh họa Phần A8)
-const logger = (store) => (next) => (action) => {
-  if (typeof action !== 'function') console.log('[action]', action.type);
-  return next(action);
-};
+// Đọc giỏ hàng đã lưu từ localStorage
+function loadCart() {
+  try {
+    const saved = typeof localStorage !== 'undefined' ? localStorage.getItem('cart') : null;
+    return saved ? { items: JSON.parse(saved) } : undefined;
+  } catch {
+    return undefined;
+  }
+}
 
-const composeEnhancers =
-  (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+export const store = configureStore({
+  reducer: {
+    counter: counterReducer,
+    todos: todosReducer,
+    filter: filterReducer,
+    users: userReducer,
+    cart: cartReducer,
+    products: productsReducer,
+  },
+  preloadedState: {
+    cart: loadCart() ?? { items: [] },
+  },
+});
 
-export const store = createStore(
-  rootReducer,
-  composeEnhancers(applyMiddleware(thunk, logger))
-);
+// Ghi giỏ hàng vào localStorage mỗi khi state thay đổi
+store.subscribe(() => {
+  try {
+    const cartState = store.getState().cart;
+    if (cartState && cartState.items) {
+      localStorage.setItem('cart', JSON.stringify(cartState.items));
+    }
+  } catch (err) {
+    console.error('Không thể lưu giỏ hàng vào localStorage:', err);
+  }
+});
